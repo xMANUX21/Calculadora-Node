@@ -1,0 +1,19 @@
+{
+  "name": "proyectocalculadora",
+  "version": "1.0.0",
+  "description": "Actividad Calculadora",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xMANUX21/Calculadora-Node.git"
+  },
+  "author": "Manuel.C",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xMANUX21/Calculadora-Node/issues"
+  },
+  "homepage": "https://github.com/xMANUX21/Calculadora-Node#readme"
+}
