@@ -1,24 +1,17 @@
-const pantalla = document.getElementById("pantalla")
-const botones = document.querySelectorAll("button[data-valor]")
-const igual = document.getElementById("igual")
-const clear = document.getElementById("clear")
+import { configurarBotones } from './botones.js'
 
-let operacion = ""
+document.addEventListener("DOMContentLoaded", () => { // hace que no hayan errores si no se ha cargado el navegador
+  const pantalla = document.getElementById("pantalla");
+  const clear=document.getElementById("clear")
+  const igual=document.getElementById("igual")
+  
+  const { getOperacion, setOperacion } = configurarBotones(pantalla)// traigo las funciones de mi objeto  no como const funciones = configurarBotones y luego funciones.getOperacion
 
-botones.forEach(boton => {
-  boton.addEventListener("click", () => {
-    operacion += boton.getAttribute("data-valor")
-    pantalla.innerHTML = operacion;
+  igual.addEventListener("click", () => {
+      setOperacion(eval(getOperacion()).toString()) //optiene el valor,,hace la operacion actual,  la convierte como string  , y la establece en la pantalla
   })
-});
 
-igual.addEventListener("click", () => {
-    const resultado = eval(operacion) // hace la operacion
-    operacion = resultado.toString() // paso a string los resultados
-    pantalla.innerHTML = resultado // muestro el pantalla el resultado
-});
-
-clear.addEventListener("click", () => {
-  operacion = ""
-  pantalla.innerHTML = "0";
-});
+  clear.addEventListener("click", () => {
+    setOperacion("")// establece la pantalla a 0
+  })
+})
